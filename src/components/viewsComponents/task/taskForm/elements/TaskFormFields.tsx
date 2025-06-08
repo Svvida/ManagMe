@@ -2,7 +2,7 @@ import { BasicInfoFields } from "./fields/BasicInfoFields";
 import { StoryAndHoursFields } from "./fields/StoryAndHoursFields";
 import { PriorityAndStatusFields } from "./fields/PriorityAndStatusFields";
 import { AssigneeField } from "./fields/AssigneeField";
-import { useGetAssignableUsersQuery } from "../../../../../redux/apiSlices/users.api.slice";
+import { useGetAssignableUsersQuery } from "../../../../../redux/apiSlices/users.slice";
 import { Stack } from "@mui/material";
 
 interface TaskFormFieldsProps {

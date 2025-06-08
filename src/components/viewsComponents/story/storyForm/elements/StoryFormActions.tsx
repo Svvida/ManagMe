@@ -3,7 +3,7 @@
 import { Box, Button, CircularProgress, alpha } from "@mui/material";
 import { IStoryFormData } from "../../../../../contract/stories";
 import { useTypedFormContext } from "../../../../../hooks/useTypedFormContext";
-import { useGetAllProjectsQuery } from "../../../../../redux/apiSlices/projects.api.slice";
+import { useGetAllProjectsQuery } from "../../../../../redux/apiSlices/projects.slice";
 
 // The props are now much simpler and cleaner!
 interface StoryFormActionsProps {

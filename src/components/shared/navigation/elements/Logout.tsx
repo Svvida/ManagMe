@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useSendLogoutMutation } from '../../../../redux/apiSlices/auth.api.slice';
+import { useSendLogoutMutation } from '../../../../redux/apiSlices/auth.slice';
 
 function Logout() {
   const [sendLogout] = useSendLogoutMutation();

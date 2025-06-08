@@ -5,7 +5,7 @@ import { isAfter, parseISO } from 'date-fns';
 import { enqueueSnackbar } from 'notistack';
 import { useAppBarTimer } from '../../../../hooks/useAppBarTimer';
 import { useTypedSelector } from '../../../../hooks/useStore';
-import { useRefreshMutation, useSendLogoutMutation } from '../../../../redux/apiSlices/auth.api.slice';
+import { useRefreshMutation, useSendLogoutMutation } from '../../../../redux/apiSlices/auth.slice';
 import { selectTokenExpirationTime } from '../../../../redux/statesSlices/auth.slice';
 import { timerStylesByState } from '../constants/constants';
 

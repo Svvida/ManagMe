@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Person, LockOpen } from '@mui/icons-material';
 import { loginValidationSchema } from './schema/Login.Yup';
-import { useLoginMutation } from '../../../redux/apiSlices/auth.api.slice';
+import { useLoginMutation } from '../../../redux/apiSlices/auth.slice';
 import RHFTextField from '../../shared/formComponents/RHFTextField';
 import PasswordField from '../../shared/formComponents/PasswordField';
 

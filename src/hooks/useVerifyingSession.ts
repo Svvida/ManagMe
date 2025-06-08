@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { logOut, setCredentials } from '../redux/statesSlices/auth.slice';
-import { useRefreshMutation } from '../redux/apiSlices/auth.api.slice';
+import { useRefreshMutation } from '../redux/apiSlices/auth.slice';
 import { useEffectOnce } from './useEffect';
 import { useTypedDispatch } from './useStore';
 

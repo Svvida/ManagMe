@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Priority, Status } from "../../../../contract/enums";
 import { ITask, ITaskFormData } from "../../../../contract/tasks";
-import { useCreateTaskMutation, useUpdateTaskMutation } from "../../../../redux/apiSlices/tasks.api.slice";
+import { useCreateTaskMutation, useUpdateTaskMutation } from "../../../../redux/apiSlices/tasks.slice";
 import { TaskFormActions } from "./elements/TaskFormActions";
 import { taskSchema } from "./schema/schema";
 import { modalStyle } from "./styles/styles";

@@ -1,4 +1,4 @@
-import { IDecodedJwt } from "../../apiSlices/auth.api.slice";
+import { IDecodedJwt } from "../../apiSlices/auth.slice";
 
 export function parseJwt(token: string | null): IDecodedJwt | undefined {
   if (!token) {

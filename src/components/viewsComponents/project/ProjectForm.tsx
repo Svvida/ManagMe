@@ -15,7 +15,7 @@ import {
 import { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { IProject } from "../../../contract/projects";
-import { useCreateProjectMutation, useUpdateProjectMutation } from "../../../redux/apiSlices/projects.api.slice";
+import { useCreateProjectMutation, useUpdateProjectMutation } from "../../../redux/apiSlices/projects.slice";
 import { projectSchema } from "./schema/schema";
 import { Add, Edit, Close } from "@mui/icons-material";
 
