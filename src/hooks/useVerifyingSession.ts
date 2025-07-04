@@ -1,34 +1,47 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { logOut, setCredentials } from '../redux/statesSlices/auth.slice';
 import { useRefreshMutation } from '../redux/apiSlices/auth.slice';
-import { useEffectOnce } from './useEffect';
+import { setCredentials, logOut } from '../redux/statesSlices/auth.slice';
 import { useTypedDispatch } from './useStore';
 
 export const useVerifySession = (token: string | null) => {
   const navigate = useNavigate();
   const dispatch = useTypedDispatch();
   const [isVerifying, setIsVerifying] = useState(true);
-  const [refresh, { isLoading }] = useRefreshMutation();
+  const [refresh, { isLoading: isRefreshing }] = useRefreshMutation();
 
-  useEffectOnce(() => {
-    if (!token) {
-      setIsVerifying(false);
-      return;
-    }
+  useEffect(() => {
+    let isMounted = true;
 
-    refresh()
-      .unwrap()
-      .then(result => {
-        dispatch(setCredentials({ accessToken: result.accessToken, user: result.user }));
-      })
-      .catch(() => {
-        dispatch(logOut());
-        navigate('/login');
-      })
-      .finally(() => {
+    const verifyToken = async () => {
+      if (!token) {
         setIsVerifying(false);
-      });
-  });
-  return { isLoading: isLoading || isVerifying };
+        return;
+      }
+
+      try {
+        const result = await refresh().unwrap();
+        if (isMounted) {
+          dispatch(setCredentials({ accessToken: result.accessToken, user: result.user }));
+        }
+      } catch {
+        if (isMounted) {
+          dispatch(logOut());
+          navigate('/login', { replace: true });
+        }
+      } finally {
+        if (isMounted) {
+          setIsVerifying(false);
+        }
+      }
+    };
+
+    verifyToken();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []); // runs only ONCE
+
+  return { isLoading: isRefreshing || isVerifying };
 };

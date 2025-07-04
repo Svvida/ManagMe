@@ -2,50 +2,55 @@ import { ITask, ICreateTaskRequest, IUpdateTaskRequest } from "../../contract/ta
 import Api from "../api";
 
 export const taskSlice = Api.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getAllTasks: builder.query<ITask[], void>({
       query: () => ({
-        url: '/tasks',
+        url: "/tasks",
       }),
-      providesTags: ['tasksGet'],
+      transformResponse: (response: ITask[]) => {
+        return response.filter((task) => {
+          return task.story && task.story.id;
+        });
+      },
+      providesTags: ["tasksGet"],
     }),
 
     getTaskById: builder.query<ITask, string>({
-      query: id => `/tasks/${id}`,
+      query: (id) => `/tasks/${id}`,
     }),
 
     createTask: builder.mutation<ITask, ICreateTaskRequest>({
-      query: task => ({
-        url: '/tasks',
-        method: 'POST',
+      query: (task) => ({
+        url: "/tasks",
+        method: "POST",
         body: task,
       }),
-      invalidatesTags: ['tasksGet'],
+      invalidatesTags: ["tasksGet"],
     }),
 
     updateTask: builder.mutation<ITask, IUpdateTaskRequest>({
       query: ({ id, data }) => ({
         url: `/tasks/${id}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
       }),
-      invalidatesTags: ['tasksGet'],
+      invalidatesTags: ["tasksGet"],
     }),
 
     completeTask: builder.mutation<ITask, string>({
-      query: id => ({
+      query: (id) => ({
         url: `/tasks/${id}/complete`,
-        method: 'PUT',
+        method: "PUT",
       }),
-      invalidatesTags: ['tasksGet'],
+      invalidatesTags: ["tasksGet"],
     }),
 
     deleteTask: builder.mutation<{ id: string }, string>({
-      query: id => ({
+      query: (id) => ({
         url: `/tasks/${id}`,
-        method: 'DELETE',
+        method: "DELETE",
       }),
-      invalidatesTags: ['tasksGet'],
+      invalidatesTags: ["tasksGet"],
     }),
   }),
 });

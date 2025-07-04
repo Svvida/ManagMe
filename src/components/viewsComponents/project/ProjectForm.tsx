@@ -82,8 +82,8 @@ export default function ProjectForm({ open, onClose, project, onSave }: ProjectF
       }
       onSave();
       handleClose(true);
-    } catch (error: any) {
-      setSubmitError(error?.data?.message || `Failed to ${isEditMode ? 'update' : 'create'} project.`);
+    } catch {
+      setSubmitError(`Failed to ${isEditMode ? 'update' : 'create'} project.`);
     }
   };
 

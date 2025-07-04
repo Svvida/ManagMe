@@ -2,42 +2,47 @@ import { IStory, ICreateStoryRequest, IUpdateStoryRequest } from "../../contract
 import Api from "../api";
 
 export const storySlice = Api.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getAllStories: builder.query<IStory[], void>({
       query: () => ({
-        url: '/stories',
+        url: "/stories",
       }),
-      providesTags: ['storiesGet'],
+      transformResponse: (response: IStory[]) => {
+        return response.filter((story) => {
+          return story.project && story.project.id;
+        });
+      },
+      providesTags: ["storiesGet"],
     }),
 
     getStoryById: builder.query<IStory, string>({
-      query: id => `/stories/${id}`,
+      query: (id) => `/stories/${id}`,
     }),
 
     createStory: builder.mutation<IStory, ICreateStoryRequest>({
-      query: story => ({
-        url: '/stories',
-        method: 'POST',
+      query: (story) => ({
+        url: "/stories",
+        method: "POST",
         body: story,
       }),
-      invalidatesTags: ['storiesGet'],
+      invalidatesTags: ["storiesGet"],
     }),
 
     updateStory: builder.mutation<IStory, IUpdateStoryRequest>({
       query: ({ id, data }) => ({
         url: `/stories/${id}`,
-        method: 'PATCH',
+        method: "PATCH",
         body: data,
       }),
-      invalidatesTags: ['storiesGet'],
+      invalidatesTags: ["storiesGet"],
     }),
 
     deleteStory: builder.mutation<{ id: string }, string>({
-      query: id => ({
+      query: (id) => ({
         url: `/stories/${id}`,
-        method: 'DELETE',
+        method: "DELETE",
       }),
-      invalidatesTags: ['storiesGet'],
+      invalidatesTags: ["storiesGet"],
     }),
   }),
 });

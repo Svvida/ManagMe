@@ -83,8 +83,8 @@ const authApiSlice = Api.injectEndpoints({
             accessToken: data.accessToken,
             user: data.user
           }));
-        } catch (error) {
-          console.error('Token refresh failed:', error);
+        } catch {
+          dispatch(logOut());
         }
       },
     }),
@@ -95,7 +95,7 @@ export const {
   useLoginMutation,
   useRegisterMutation,
   useSendLogoutMutation,
-  useRefreshMutation,
+  useRefreshMutation
 } = authApiSlice;
 
 export default authApiSlice;

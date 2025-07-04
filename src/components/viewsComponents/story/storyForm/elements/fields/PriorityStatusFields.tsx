@@ -1,7 +1,7 @@
 import { Box, FormControl, InputLabel, Select, MenuItem, FormHelperText } from "@mui/material";
 import { Controller } from "react-hook-form";
 import { Priority, Status } from "../../../../../../contract/enums";
-import { IStoryFormData } from "../../../../../../contract/stories"; // Or ITaskFormData, it's flexible
+import { IStoryFormData } from "../../../../../../contract/stories";
 import { useTypedFormContext } from "../../../../../../hooks/useTypedFormContext";
 import { themedFieldSx } from "../../styles/styles";
 
