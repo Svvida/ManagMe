@@ -7,7 +7,10 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { IProject } from "../../../contract/projects";
-import { useGetAllProjectsQuery, useDeleteProjectMutation } from "../../../redux/apiSlices/projects.slice";
+import {
+  useGetAllProjectsQuery,
+  useDeleteProjectMutation,
+} from "../../../redux/apiSlices/projects";
 import ProjectForm from "./ProjectForm";
 import ProjectListHeader from "./elements/ProjectListHeader";
 import ProjectCard from "./elements/ProjectCard";

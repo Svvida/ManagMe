@@ -6,9 +6,12 @@ import TaskKanbanBoard from "./elements/TaskKanbanBoard";
 import TaskEmptyState from "./elements/TaskEmptyState";
 import { Priority } from "../../../../contract/enums";
 import { ITask } from "../../../../contract/tasks";
-import { useGetAllStoriesQuery } from "../../../../redux/apiSlices/stories.slices";
-import { useGetAllTasksQuery, useDeleteTaskMutation } from "../../../../redux/apiSlices/tasks.slice";
-import { useGetAssignableUsersQuery } from "../../../../redux/apiSlices/users.slice";
+import { useGetAllStoriesQuery } from "../../../../redux/apiSlices/stories";
+import {
+  useGetAllTasksQuery,
+  useDeleteTaskMutation,
+} from "../../../../redux/apiSlices/tasks";
+import { useGetAssignableUsersQuery } from "../../../../redux/apiSlices/users";
 import TaskForm from "../taskForm/TaskForm";
 
 export default function TaskList() {

@@ -3,7 +3,7 @@ import { BasicStoryFields } from "./fields/BasicStoryFields";
 import { PriorityStatusFields } from "./fields/PriorityStatusFields";
 import { ProjectField } from "./fields/ProjectField";
 import { OwnerField } from "./fields/OwnerField";
-import { useGetAllUsersQuery } from "../../../../../redux/apiSlices/users.slice";
+import { useGetAllUsersQuery } from "../../../../../redux/apiSlices/users";
 
 interface StoryFormFieldsProps {
   isLoading: boolean;

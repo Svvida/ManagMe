@@ -20,7 +20,7 @@ import {
   Work,
   Login as LoginIcon
 } from '@mui/icons-material';
-import { useRegisterMutation } from '../../../redux/apiSlices/auth.slice';
+import { useRegisterMutation } from "../../../redux/apiSlices/auth";
 import RHFTextField from '../../shared/formComponents/RHFTextField';
 import { registerValidationSchema } from './schema/Register.Yup';
 import { Role } from '../../../contract/enums';

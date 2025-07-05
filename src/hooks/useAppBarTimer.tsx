@@ -1,7 +1,7 @@
 import { useState, useLayoutEffect } from 'react';
 import { parseISO } from 'date-fns';
 import { useTypedSelector } from './useStore';
-import { selectTokenExpirationTime } from '../redux/statesSlices/auth.slice';
+import { selectTokenExpirationTime } from "../redux/statesSlices/auth";
 import { TimerStatesEnum } from '../components/shared/appBar/constants/constants';
 import { calculateTimeLeft, getTimerState } from '../components/shared/appBar/utils/Timer.Utils';
 

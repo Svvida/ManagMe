@@ -1,7 +1,7 @@
 import { fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { enqueueSnackbar } from 'notistack';
 import qs from 'qs';
-import { setCredentials } from './statesSlices/auth.slice';
+import { setCredentials } from "./statesSlices/auth";
 import type { BaseQueryFn, FetchArgs, FetchBaseQueryError } from '@reduxjs/toolkit/query';
 import { IUser } from '../contract/users';
 

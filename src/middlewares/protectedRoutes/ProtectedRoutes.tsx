@@ -1,20 +1,15 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { Box } from '@mui/material';
 import { useTypedSelector } from '../../hooks/useStore';
 import { selectCurrentToken } from "../../redux/statesSlices/auth";
 
-function PreAuthLayout() {
+const ProtectedRoutesMiddleware = () => {
   const isAuthenticated = useTypedSelector(selectCurrentToken);
 
-  if (isAuthenticated) {
-    return <Navigate replace to="/postAuth" />;
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
   }
 
-  return (
-    <Box sx={{ display: 'grid' }}>
-      <Outlet />
-    </Box>
-  );
-}
+  return <Outlet />;
+};
 
-export default PreAuthLayout;
+export default ProtectedRoutesMiddleware;

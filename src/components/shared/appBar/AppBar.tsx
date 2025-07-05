@@ -3,7 +3,7 @@ import { AppBar as MuiAppBar, Toolbar, Typography, Box, IconButton, useTheme } f
 import AppBarTimer from './elements/AppBarTimer';
 import { useTypedDispatch } from '../../../hooks/useStore';
 import { useTypedMatches } from '../../../hooks/useTypedMatches';
-import { toggleDrawer } from '../../../redux/statesSlices/view.slice';
+import { toggleDrawer } from "../../../redux/statesSlices/view";
 
 function AppBar() {
   const dispatch = useTypedDispatch();

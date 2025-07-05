@@ -4,7 +4,7 @@ import { themedFieldSx } from "../../styles/styles";
 import { useTypedFormContext } from "../../../../../../hooks/useTypedFormContext";
 import { ITaskFormData } from "../../../../../../contract/tasks";
 import { IStory } from "../../../../../../contract/stories";
-import { useGetAllStoriesQuery } from "../../../../../../redux/apiSlices/stories.slices";
+import { useGetAllStoriesQuery } from "../../../../../../redux/apiSlices/stories";
 
 interface StoryAndHoursFieldsProps {
   isLoading: boolean;

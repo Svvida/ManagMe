@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import PostAuthLayout from '../layouts/postAuth/PostAuthLayout';
 import PreAuthLayout from '../layouts/preAuth/PreAuthLayout';
-import PersistLoginMiddleware from '../middlewares/persistLogin/PersistLogin.Middleware';
-import ProtectedRoutesMiddleware from '../middlewares/protectedRoutes/ProtectedRoutes.Middleware';
+import PersistLoginMiddleware from '../middlewares/persistLogin/PersistLogin';
+import ProtectedRoutesMiddleware from '../middlewares/protectedRoutes/ProtectedRoutes';
 import ErrorPage from '../components/shared/errorPage/ErrorPage';
 import Login from '../components/viewsComponents/login/Login';
 import Register from '../components/viewsComponents/register/Register';

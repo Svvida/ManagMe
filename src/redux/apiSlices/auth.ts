@@ -1,7 +1,7 @@
 import { ILoginResponse, ILoginRequest, IRegisterResponse, IRegisterRequest, IRefreshResponse } from "../../contract/auth";
 import { Role } from "../../contract/enums";
 import Api from "../api";
-import {  setCredentials, logOut } from "../statesSlices/auth.slice";
+import { setCredentials, logOut } from "../statesSlices/auth";
 
 export interface IDecodedJwt {
   accountId: number;

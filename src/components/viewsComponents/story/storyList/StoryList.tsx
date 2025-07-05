@@ -2,9 +2,12 @@ import { Box, Container } from "@mui/material";
 import { useState, useMemo, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { IStory } from "../../../../contract/stories";
-import { useGetAllProjectsQuery } from "../../../../redux/apiSlices/projects.slice";
-import { useDeleteStoryMutation, useGetAllStoriesQuery } from "../../../../redux/apiSlices/stories.slices";
-import { selectUserId } from "../../../../redux/statesSlices/auth.slice";
+import { useGetAllProjectsQuery } from "../../../../redux/apiSlices/projects";
+import {
+  useDeleteStoryMutation,
+  useGetAllStoriesQuery,
+} from "../../../../redux/apiSlices/stories";
+import { selectUserId } from "../../../../redux/statesSlices/auth";
 import StoryForm from "../storyForm/StoryForm";
 import StoryEmptyState from "./elements/StoryEmptyState";
 import StoryFilters from "./elements/StoryFilters";

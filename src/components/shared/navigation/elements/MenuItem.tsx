@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { ListItemButton, ListItemIcon, ListItemText, SxProps, Theme, Tooltip, alpha } from '@mui/material';
 import type { IMenuItemProps } from '../types/types';
 import { useTypedSelector } from '../../../../hooks/useStore';
-import { selectIsDrawerOpen } from '../../../../redux/statesSlices/view.slice';
+import { selectIsDrawerOpen } from "../../../../redux/statesSlices/view";
 
 const itemSx: SxProps<Theme> = {
   px: 2.5,

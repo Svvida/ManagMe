@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useRefreshMutation } from '../redux/apiSlices/auth.slice';
-import { setCredentials, logOut } from '../redux/statesSlices/auth.slice';
+import { useRefreshMutation } from "../redux/apiSlices/auth";
+import { setCredentials, logOut } from "../redux/statesSlices/auth";
 import { useTypedDispatch } from './useStore';
 
 export const useVerifySession = (token: string | null) => {

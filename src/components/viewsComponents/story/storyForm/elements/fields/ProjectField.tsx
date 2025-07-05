@@ -4,7 +4,7 @@ import { themedFieldSx } from "../../styles/styles";
 import { IProject } from "../../../../../../contract/projects";
 import { IStoryFormData } from "../../../../../../contract/stories";
 import { useTypedFormContext } from "../../../../../../hooks/useTypedFormContext";
-import { useGetAllProjectsQuery } from "../../../../../../redux/apiSlices/projects.slice";
+import { useGetAllProjectsQuery } from "../../../../../../redux/apiSlices/projects";
 
 interface ProjectFieldProps {
   isLoading: boolean;

@@ -1,7 +1,7 @@
 import { Avatar, Box, Typography, Collapse, Stack } from '@mui/material';
-import { selectCurrentUser } from '../../../../redux/statesSlices/auth.slice';
+import { selectCurrentUser } from "../../../../redux/statesSlices/auth";
 import { useTypedSelector } from '../../../../hooks/useStore';
-import { selectIsDrawerOpen } from '../../../../redux/statesSlices/view.slice';
+import { selectIsDrawerOpen } from "../../../../redux/statesSlices/view";
 
 function UserProfile() {
   const user = useTypedSelector(selectCurrentUser);

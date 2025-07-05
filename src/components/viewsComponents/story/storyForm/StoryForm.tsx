@@ -3,7 +3,10 @@ import { Modal, Box, Alert, Stack, Fade } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useForm, FormProvider } from "react-hook-form"; // Import FormProvider
 import { IStory, IStoryFormData } from "../../../../contract/stories";
-import { useCreateStoryMutation, useUpdateStoryMutation } from "../../../../redux/apiSlices/stories.slices";
+import {
+  useCreateStoryMutation,
+  useUpdateStoryMutation,
+} from "../../../../redux/apiSlices/stories";
 import { StoryFormActions } from "./elements/StoryFormActions";
 import { StoryFormFields } from "./elements/StoryFormFields";
 import { storySchema } from "./schema/schema";

@@ -1,5 +1,4 @@
-import type { JSXElementConstructor, ReactElement } from 'react';
-import { Role } from '../../../../contract/enums';
+import type { JSXElementConstructor, ReactElement } from "react";
 
 export interface IMenuItem {
   id: string;
@@ -7,7 +6,6 @@ export interface IMenuItem {
   icon: ReactElement<unknown, JSXElementConstructor<unknown> | string>;
   linkTo?: string;
   children?: IMenuItem[];
-  availableForRoles?: Role[];
 }
 
 export interface IMenuItemProps {

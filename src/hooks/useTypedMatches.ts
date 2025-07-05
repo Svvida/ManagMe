@@ -1,14 +1,10 @@
 import type React from 'react';
-import { useMatches as originalUseMatches } from 'react-router-dom';
-import { Role } from '../contract/enums';
+import { useMatches as originalUseMatches } from "react-router-dom";
 
 export interface IRouteHandle {
   navigation?: {
     text: string;
     icon: React.JSX.Element;
-  };
-  permissions?: {
-    availableForRoles?: Role[];
   };
 }
 

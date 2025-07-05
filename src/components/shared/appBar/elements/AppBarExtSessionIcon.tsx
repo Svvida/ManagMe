@@ -1,7 +1,7 @@
 import RefreshIcon from '@mui/icons-material/Refresh';
 import { IconButton, Tooltip } from '@mui/material';
 import { enqueueSnackbar } from 'notistack';
-import { useRefreshMutation } from '../../../../redux/apiSlices/auth.slice';
+import { useRefreshMutation } from "../../../../redux/apiSlices/auth";
 import FullScreenLoader from '../../fullScreenLoader/FullScreenLoader';
 
 interface IAppBarExtSessionIconProps {

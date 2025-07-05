@@ -1,7 +1,7 @@
 import { Box, Button, CircularProgress, alpha } from "@mui/material";
 import { IStoryFormData } from "../../../../../contract/stories";
 import { useTypedFormContext } from "../../../../../hooks/useTypedFormContext";
-import { useGetAllProjectsQuery } from "../../../../../redux/apiSlices/projects.slice";
+import { useGetAllProjectsQuery } from "../../../../../redux/apiSlices/projects";
 
 interface StoryFormActionsProps {
   isLoading: boolean;
