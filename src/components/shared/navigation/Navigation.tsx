@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { Box, Divider, List, Drawer as MuiDrawer, IconButton } from '@mui/material';
 import { ChevronLeft } from '@mui/icons-material';
-import Logo from '../../../assets/images/logo.png';
+import Logo from "../../../assets/images/Logo.png";
 import UserProfile from './elements/UserProfile';
 import MenuItemComponent from './elements/MenuItem';
 import type { INavigationProps } from './types/types';
